@@ -1,0 +1,9 @@
+{
+  "config": {
+    "aws": {
+      "user_pool_id": "us-west-2_xxxxxx",
+      "access_key": "access-key-of-IAM-user-with-Cognito-permissions",
+      "secret_key": "the-secret-key-of-IAM-user-with-Cognito-permissions"
+    }
+  }
+}
