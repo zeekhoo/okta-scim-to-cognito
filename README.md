@@ -24,16 +24,18 @@ to AWS](https://boto3.readthedocs.io/en/latest/guide/quickstart.html), which has
     Python's ["pip" package manager](https://en.wikipedia.org/wiki/Pip_%28package_manager%29):
 
         $ pip install -r requirements.txt
-5.  Rename .sample.config.json to .sample.json
+5.  Rename **.sample.config.json** to **.sample.json**
 
         $ mv .sample.config.json .sample.json
 
-6.  Edit .sample.json and provide the values for user_pool_id, access_key and secret_key.
+6.  Edit **.sample.json* and provide the values for **user_pool_id**, **access_key** and **secret_key**.
+    
     This project only provisions into a single user-pool, so you must supply the name for
     that user-pool. 
+    
     Boto requires AWS credentials in order to make requests. Create security credentials
-    for an IAM user that has the AmazonCognitoPowerUser policy and enter the access_key
-    and secret_key values from the credentials into this file.
+    for an IAM user that has the **AmazonCognitoPowerUser** policy and enter the *access_key*
+    and *secret_key* values from the credentials into this file.
     
 7.  Start the example SCIM server using this command:
 
