@@ -60,41 +60,21 @@ the temporary password '123456'. In your user-pool's policy configuration:
 
 
 ## Okta setup
-If you don't already have an Okta org, create an 
-[Okta Developer account](https://www.okta.com/developer/signup/). 
-
-Once you have access to your account, from the Admin UI:
-1.  Navigate to Applications > Applications. 
-Click on the green button [Add Application]
-
-2.  Click the green [Create New App] button to reveal the *App Integration Wizard* 
-
-3.  Select "Web" as the Platform. Then select "Secure Web Authentication (SWA)" as the Sign on method. As of now, you can only configure SCIM on SWA or SAML2.0 Wizard Apps. OpenID Connect Apps may be supported in the near future.
-
-4.  Provide a value for the app name, and login page URL. For a SWA integration, you must provide the login page URL. Just enter any value so you can save the integration. However, the value is not important for this sample. 
-    e.g. `http://foo/login`
-
-5.  Click [Finish]
-
-6.  Once you've saved. Navigate back to the "General" tab, and select SCIM Provisioning. And [Save]
-
-7.  Once saved you'll notice a "Provisioning" tab. Navigate to it.  In the SCIM connector base URL field, enter `https://your-ngrok-https-forwarding-url/scim/v2`
+Follow the steps in [SCIM App Wizard Guide](https://help.okta.com/en/prod/Content/Topics/Apps/Apps_App_Integration_Wizard.htm#The) 
+to create the SCIM Application. 
+* In the SCIM connector base URL field, enter `https://your-ngrok-https-forwarding-url/scim/v2`
 
     e.g `https://d0aafa9e.ngrok.io/scim/v2`
-    
-8.  In the Unique identifier field for users, enter the value `userName`
+* In the Unique identifier field for users, enter the value `userName`
 
-9.  Change Authentication Mode to `HTTP Header`. Enter any random value for HTTP Header, Authorization Token. The field is required, 
+* Change Authentication Mode to `HTTP Header`. Enter any random value for HTTP Header, Authorization Token. The field is required, 
     but the sample project will not be using it. In production, protect your
     endpoints with an API Key. (Or Basic Auth or OAuth2. Recall from the previous steps, 
     there are SCIM templates for each of the 3 types of auth protocols)
-
-10.  Click [Test Connector Credentials]. 
-
-If you receive a success message in the last step above, your configuration
-is complete. Now you can assign and unassign users to your app and watch it
-automatically provision and deprovision users to your Cognito user-pool.
-
+    
+* Click [Test Connector Credentials]. If you receive a success message, your configuration is complete. 
+Now you can assign and unassign users to your app and watch it automatically provision and 
+deprovision users to your Cognito user-pool.
 
 
 # Appendix
